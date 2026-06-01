@@ -108,16 +108,4 @@ esp_err_t mcp4132_set_wiper(spi_device_handle_t spi, uint8_t value)
     return mcp4132_write_register(spi, MCP4132_WIPER0_ADDR, value);
 }
 
-void app_main(void)
-{
-    spi_device_handle_t spi_handle = NULL;
-    esp_err_t err = spi_bus_init(&spi_handle);
-    if (err != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to initialize SPI bus");
-        return;
-    }
 
-    ESP_LOGI(TAG, "SPI bus initialized for MCP4132 (mode 0)");
-
-    // Aquí se puede añadir el código de comunicación con el MCP4132.
-}
